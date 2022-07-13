@@ -26,7 +26,7 @@ jobs:
           chmod +x "${GITHUB_WORKSPACE}/cmd/gcsim/build.sh"
 
           # run the script
-          "${GITHUB_WORKSPACE}/cmd/guisim/build.sh"
+          "${GITHUB_WORKSPACE}/cmd/gcsim/build.sh"
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
