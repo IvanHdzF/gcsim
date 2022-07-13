@@ -23,10 +23,10 @@ jobs:
           go-version: ^1.17.7
       - run: |
           # make file runnable, might not be necessary
-          chmod +x "${GITHUB_WORKSPACE}/cmd/gcsim/build.sh"
+          chmod +x "${GITHUB_WORKSPACE}/scripts/build-guisim.sh"
 
           # run the script
-          "${GITHUB_WORKSPACE}/cmd/gcsim/build.sh"
+          "${GITHUB_WORKSPACE}/scripts/build-guisim.sh"
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
