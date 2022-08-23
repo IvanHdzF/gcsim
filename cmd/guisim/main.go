@@ -291,6 +291,9 @@ func main() {
 
 	load := widget.NewButton("Load", func() {
 		file_loaded = selectFile()
+		if len(file_loaded) == 0 {
+			return
+		}
 		charNames := getCharNames(file_loaded)
 		char_select.Options = charNames
 		char_select.SetSelected(charNames[0])
