@@ -12,8 +12,8 @@ import (
 	"github.com/harry1453/go-common-file-dialog/cfd"
 	"github.com/harry1453/go-common-file-dialog/cfdutil"
 
-	"github.com/genshinsim/gcsim/internal/simulator"
-	"github.com/genshinsim/gcsim/internal/substatoptimizer"
+	"github.com/genshinsim/gcsim/pkg/optimization"
+	"github.com/genshinsim/gcsim/pkg/simulator"
 
 	dataframe "github.com/rocketlaunchr/dataframe-go"
 	exports "github.com/rocketlaunchr/dataframe-go/exports"
@@ -159,7 +159,7 @@ func OptnRunFunc(optimize bool, replace bool, gz bool) {
 				configpath.ResultSaveToPath = path.Dir(strings.Replace(filepath, "\\", "/", -1)) + "/_Optimized" + filename + ".txt"
 			}
 			fmt.Printf("\nSaving to %v\n", configpath.ResultSaveToPath)
-			substatoptimizer.RunSubstatOptim(configpath, false, "")
+			optimization.RunSubstatOptim(configpath, false, "")
 		}
 
 		log.Printf("Simulating: %v ...\n", configpath.ResultSaveToPath)
